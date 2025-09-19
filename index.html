@@ -292,7 +292,7 @@
                 <!-- Publication List -->
                 <div class="space-y-6" id="publication-list">
                     <!-- Journal Publications -->
-                    <!-- 标记每条期刊论文的索引，用于控制默认显示�?4�? -->
+                    <!-- æ è®°æ¯æ¡æåè®ºæçç´¢å¼ï¼ç¨äºæ§å¶é»è®¤æ¾ç¤ºå?4æ? -->
                     <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="1">
                         <div class="flex flex-col md:flex-row md:items-center gap-4">
                             <div class="md:w-1/12 flex justify-center">
@@ -406,7 +406,7 @@
                     </div>
                     
 
-                    <!-- 索引5及以后的期刊论文默认隐藏，添加publication-enter�? -->
+                    <!-- ç´¢å¼5åä»¥åçæåè®ºæé»è®¤éèï¼æ·»å publication-enterç±? -->
                     <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="5">
                         <div class="flex flex-col md:flex-row md:items-center gap-4">
                             <div class="md:w-1/12 flex justify-center">
@@ -1223,7 +1223,7 @@
 
 
                     <!-- Conference Publications -->
-                    <!-- 标记每条会议论文的索引，用于控制默认显示�?4�? -->
+                    <!-- æ è®°æ¯æ¡ä¼è®®è®ºæçç´¢å¼ï¼ç¨äºæ§å¶é»è®¤æ¾ç¤ºå?4æ? -->
                     <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="conference" data-index="1">
                         <div class="flex flex-col md:flex-row md:items-center gap-4">
                             <div class="md:w-1/12 flex justify-center">
@@ -1336,7 +1336,7 @@
                         </div>
                     </div>
 
-                    <!-- 索引5及以后的会议论文默认隐藏，添加publication-enter�? -->
+                    <!-- ç´¢å¼5åä»¥åçä¼è®®è®ºæé»è®¤éèï¼æ·»å publication-enterç±? -->
                     <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="conference" data-index="5">
                         <div class="flex flex-col md:flex-row md:items-center gap-4">
                             <div class="md:w-1/12 flex justify-center">
@@ -1795,20 +1795,20 @@ Senior Member, Institute of Electrical and Electronics Engineers (IEEE)	</span>
                     observer.observe(section);
                 });
 
-                // Publication filtering - 控制每个类别默认显示�?4�?
+                // Publication filtering - æ§å¶æ¯ä¸ªç±»å«é»è®¤æ¾ç¤ºå?4æ?
                 const filters = document.querySelectorAll('.publication-filter');
                 const items = document.querySelectorAll('.publication-item');
                 const toggleBtn = document.getElementById('toggle-publications');
                 let showingMore = false;
-                const DEFAULT_VISIBLE = 4; // 默认显示�?4�?
+                const DEFAULT_VISIBLE = 4; // é»è®¤æ¾ç¤ºå?4æ?
                 
-                // 初始化：默认显示期刊类别，且仅显示前4�?
+                // åå§åï¼é»è®¤æ¾ç¤ºæåç±»å«ï¼ä¸ä»æ¾ç¤ºå4æ?
                 function initPublications() {
                     items.forEach(item => {
                         const type = item.getAttribute('data-type');
                         const index = parseInt(item.getAttribute('data-index'));
                         
-                        // 仅显示期刊类别，且索引≤4的条�?
+                        // ä»æ¾ç¤ºæåç±»å«ï¼ä¸ç´¢å¼â¤4çæ¡ç?
                         if (type === 'journal' && index <= DEFAULT_VISIBLE) {
                             item.style.display = 'block';
                         } else {
@@ -1817,13 +1817,13 @@ Senior Member, Institute of Electrical and Electronics Engineers (IEEE)	</span>
                     });
                 }
                 
-                // 初始化执�?
+                // åå§åæ§è¡?
                 initPublications();
                 
-                // 筛�?�按钮事�? - 切换类别时仅显示该类别前4�?
+                // ç­é?æé®äºä»? - åæ¢ç±»å«æ¶ä»æ¾ç¤ºè¯¥ç±»å«å4æ?
                 filters.forEach(filter => {
                     filter.addEventListener('click', function() {
-                        // 更新筛�?�按钮样�?
+                        // æ´æ°ç­é?æé®æ ·å¼?
                         filters.forEach(btn => {
                             btn.classList.remove('bg-primary', 'text-white');
                             btn.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
@@ -1834,7 +1834,7 @@ Senior Member, Institute of Electrical and Electronics Engineers (IEEE)	</span>
                         
                         const filterType = this.getAttribute('data-filter');
                         
-                        // 显示选中类型的前4条，隐藏其他
+                        // æ¾ç¤ºéä¸­ç±»åçå4æ¡ï¼éèå¶ä»
                         items.forEach(item => {
                             const itemType = item.getAttribute('data-type');
                             const itemIndex = parseInt(item.getAttribute('data-index'));
@@ -1846,28 +1846,28 @@ Senior Member, Institute of Electrical and Electronics Engineers (IEEE)	</span>
                             }
                         });
                         
-                        // 重置显示更多状�??
+                        // éç½®æ¾ç¤ºæ´å¤ç¶æ??
                         showingMore = false;
                         toggleBtn.textContent = 'Show More Publications';
-                        // 移除�?有展�?状�??
+                        // ç§»é¤æ?æå±å¼?ç¶æ??
                         document.querySelectorAll('.publication-enter').forEach(pub => {
                             pub.classList.remove('active');
                         });
                     });
                 });
                 
-                // 显示/隐藏更多出版�? - 显示当前类别�?有条�?
+                // æ¾ç¤º/éèæ´å¤åºçç? - æ¾ç¤ºå½åç±»å«æ?ææ¡ç?
                 toggleBtn.addEventListener('click', function() {
                     showingMore = !showingMore;
                     const activeFilter = document.querySelector('.publication-filter.bg-primary');
                     const currentType = activeFilter ? activeFilter.getAttribute('data-filter') : 'journal';
                     
                     if (showingMore) {
-                        // 显示当前类别�?有条�?
+                        // æ¾ç¤ºå½åç±»å«æ?ææ¡ç?
                         items.forEach(item => {
                             if (item.getAttribute('data-type') === currentType) {
                                 item.style.display = 'block';
-                                // 为隐藏的条目添加展开动画
+                                // ä¸ºéèçæ¡ç®æ·»å å±å¼å¨ç»
                                 if (item.classList.contains('publication-enter')) {
                                     item.classList.add('active');
                                 }
@@ -1875,7 +1875,7 @@ Senior Member, Institute of Electrical and Electronics Engineers (IEEE)	</span>
                         });
                         toggleBtn.textContent = 'Show Less Publications';
                     } else {
-                        // 仅显示当前类别前4�?
+                        // ä»æ¾ç¤ºå½åç±»å«å4æ?
                         items.forEach(item => {
                             const itemType = item.getAttribute('data-type');
                             const itemIndex = parseInt(item.getAttribute('data-index'));
@@ -1883,11 +1883,11 @@ Senior Member, Institute of Electrical and Electronics Engineers (IEEE)	</span>
                             if (itemType === currentType && itemIndex <= DEFAULT_VISIBLE) {
                                 item.style.display = 'block';
                             } else if (itemType === currentType) {
-                                // 隐藏当前类别索引>4的条�?
+                                // éèå½åç±»å«ç´¢å¼>4çæ¡ç?
                                 item.classList.remove('active');
                                 item.style.display = 'none';
                             } else {
-                                // 隐藏其他类别�?有条�?
+                                // éèå¶ä»ç±»å«æ?ææ¡ç?
                                 item.style.display = 'none';
                             }
                         });
