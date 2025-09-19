@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Homepage | Luo Xue</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F4C81',
+                        secondary: '#4A90E2',
+                        accent: '#F5A623',
+                        dark: '#2C3E50',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-balance {
+                text-wrap: balance;
+            }
+            .scroll-smooth {
+                scroll-behavior: smooth;
+            }
+            .section-fade {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            }
+            .section-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .publication-enter {
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            }
+            .publication-enter.active {
+                max-height: 500px;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-inter bg-gray-50 text-dark scroll-smooth">
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-xl font-bold text-primary">LUO, Xue Ph.D.</a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+                    <a href="#education" class="text-gray-700 hover:text-primary transition-colors">Education</a>
+                    <a href="#research" class="text-gray-700 hover:text-primary transition-colors">Research</a>
+                    <a href="#publications" class="text-gray-700 hover:text-primary transition-colors">Publications</a>
+                    <a href="#projects" class="text-gray-700 hover:text-primary transition-colors">Projects</a>
+                    <a href="#services" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+                    <a href="#teaching" class="text-gray-700 hover:text-primary transition-colors">Teaching</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 space-y-3">
+                <a href="#about" class="block text-gray-700 hover:text-primary transition-colors py-2">About</a>
+                <a href="#education" class="block text-gray-700 hover:text-primary transition-colors py-2">Education</a>
+                <a href="#research" class="block text-gray-700 hover:text-primary transition-colors py-2">Research</a>
+                <a href="#publications" class="block text-gray-700 hover:text-primary transition-colors py-2">Publications</a>
+                <a href="#projects" class="block text-gray-700 hover:text-primary transition-colors py-2">Projects</a>
+                <a href="#services" class="block text-gray-700 hover:text-primary transition-colors py-2">Services</a>
+                <a href="#teaching" class="block text-gray-700 hover:text-primary transition-colors py-2">Teaching</a>
+                <a href="#contact" class="block text-gray-700 hover:text-primary transition-colors py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16">
+
+        <!-- About Section -->
+        <section id="about" class="py-16 bg-white section-fade">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="w-full md:w-1/3 flex justify-center">
+                        <div class="relative">
+                            <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
+                                <img src="xluo.jpg" alt="Luo Xue - Profile Photo" class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute -bottom-3 -right-3 bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
+                                <span class="text-sm font-semibold text-center">Ph.D.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full md:w-2/3">
+                        <h1 class="text-4xl font-bold mb-4 text-dark">LUO, Xue</h1>
+                        <p class="text-xl text-gray-600 mb-6">Professor of Mathematics</p>
+                        
+                        <p class="text-gray-700 mb-6 leading-relaxed text-balance">I am a professor in the School of Mathematical Sciences at Beihang University. My research focuses on nonlinear filtering, estimation theory and forecasting, etc.</p>
+                        
+                        <p class="text-gray-700 mb-8 leading-relaxed text-balance">My current work involves developing nonlinear filtering theory and algorithms, as well as their applications in engineering, economics. I have published over 30 papers in peer-reviewed journals and conference proceedings.</p>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#contact" class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg shadow-md hover:bg-primary/90 transition-all transform hover:-translate-y-1">
+                                <i class="fa fa-envelope mr-2"></i> Contact Me
+                            </a>
+                            <a href="#" class="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-800 rounded-lg shadow-sm hover:bg-gray-300 transition-all transform hover:-translate-y-1">
+                                <i class="fa fa-file-pdf-o mr-2"></i> CV (PDF)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Education Section -->
+        <section id="education" class="py-16 bg-gray-50 section-fade">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Education</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                    <p class="mt-4 text-gray-600">Academic qualifications and educational background</p>
+                </div>
+                
+                <div class="max-w-3xl mx-auto">
+                    <!-- Timeline Container -->
+                    <div class="relative">
+                        <!-- Timeline Line -->
+                        <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 transform md:translate-x-px"></div>
+                        
+                        <!-- Education Item 1 -->
+                        <div class="relative mb-10">
+                            <div class="flex flex-col md:flex-row items-center">
+                                <!-- Timeline Dot -->
+                                <div class="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-primary transform md:-translate-x-1/2 z-10"></div>
+                                
+                                <!-- Date -->
+                                <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                                    <span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">2010 - 2013</span>
+                                </div>
+                                
+                                <!-- Content -->
+                                <div class="md:w-1/2 md:pl-12">
+                                    <div class="bg-white p-6 rounded-xl shadow-md">
+                                        <h3 class="text-xl font-semibold mb-1">Ph.D. in Applied Mathematics</h3>
+                                        <p class="text-gray-700 mb-2">University of Illinois at Chicago (UIC), USA</p>
+                                        <p class="text-gray-600 text-sm">Thesis: An novel algorithm to solve the nonlinear filtering problems in real-time</p>
+                                        <p class="text-gray-600 text-sm mt-2">Advisor: Stephen S.-T. Yau</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Education Item 2 -->
+                        <div class="relative mb-10">
+                            <div class="flex flex-col md:flex-row items-center">
+                                <!-- Timeline Dot -->
+                                <div class="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-primary transform md:-translate-x-1/2 z-10"></div>
+                                
+                                <!-- Date -->
+                                <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                                    <span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">2004 - 2010</span>
+                                </div>
+                                
+                                <!-- Content -->
+                                <div class="md:w-1/2 md:pl-12">
+                                    <div class="bg-white p-6 rounded-xl shadow-md">
+                                        <h3 class="text-xl font-semibold mb-1">Ph.D. in Applied Mathematics</h3>
+                                        <p class="text-gray-700 mb-2">East China Normal University, China</p>
+                                        <p class="text-gray-600 text-sm">Thesis: Some Partial Differential Equations Arising from Physics and Biology</p>
+                                        <p class="text-gray-600 text-sm mt-2">Advisor: Feng Zhou</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Education Item 3 -->
+                        <div class="relative">
+                            <div class="flex flex-col md:flex-row items-center">
+                                <!-- Timeline Dot -->
+                                <div class="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-primary transform md:-translate-x-1/2 z-10"></div>
+                                
+                                <!-- Date -->
+                                <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                                    <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">2000 - 2004</span>
+                                </div>
+                                
+                                <!-- Content -->
+                                <div class="md:w-1/2 md:pl-12">
+                                    <div class="bg-white p-6 rounded-xl shadow-md">
+                                        <h3 class="text-xl font-semibold mb-1">B.Sc. in Mathematics</h3>
+                                        <p class="text-gray-700 mb-2">East China Normal University</p>
+                                        <p class="text-gray-600 text-sm">Major: Mathematics and Applied Mathematics</p>
+                                        <p class="text-gray-600 text-sm mt-2">Graduated with Bachelor's Degree</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Research Interests Section -->
+        <section id="research" class="py-16 bg-white section-fade">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Current Research Interests</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Research Area 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow border-t-4 border-primary transform hover:-translate-y-1 duration-300">
+                        <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fa fa-calculator text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Nonlinear filtering</h3>
+                        <p class="text-gray-600">
+                            Development of efficient nonlinear filtering algorithms and their tailored applications in multiple interdisciplinary fields, including engineering, economics, and data-driven forecasting.
+                        </p>
+                    </div>
+                    
+                    <!-- Research Area 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow border-t-4 border-primary transform hover:-translate-y-1 duration-300">
+                        <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fa fa-cogs text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Forecasting</h3>
+                        <p class="text-gray-600">
+	Bayesian combination forecasting, with emphasis on applications in economic time series.
+                        </p>
+                    </div>
+                    
+        </section>
+        
+        <!-- Publications Section with Filtering and Category-based Expansion -->
+        <section id="publications" class="py-16 bg-gray-50 section-fade">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Publications</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                    <p class="mt-4 text-gray-600">Over 30 peer-reviewed papers in international journals and conferences</p>
+                </div>
+                
+                <!-- Publication Filters - Removed "All" button -->
+                <div class="flex flex-wrap justify-center gap-4 mb-10">
+                    <button class="publication-filter px-5 py-2 bg-primary text-white rounded-full text-sm transition-colors" data-filter="journal">Journals</button>
+                    <button class="publication-filter px-5 py-2 bg-gray-200 text-gray-700 rounded-full text-sm hover:bg-gray-300 transition-colors" data-filter="conference">Conferences</button>
+                    <button class="publication-filter px-5 py-2 bg-gray-200 text-gray-700 rounded-full text-sm hover:bg-gray-300 transition-colors" data-filter="book">Books</button>
+                </div>
+                
+                <!-- Show More/Less Button -->
+                <div class="text-center mb-8">
+                    <button id="toggle-publications" class="px-6 py-2 bg-secondary text-white rounded-lg shadow-sm hover:bg-secondary/90 transition-colors">
+                        Show More Publications
+                    </button>
+                </div>
+                
+                <!-- Publication List -->
+                <div class="space-y-6" id="publication-list">
+                    <!-- Journal Publications -->
+                    <!-- 标记每条期刊论文的索引，用于控制默认显示�?4�? -->
+                    <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="1">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2025</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Brownian and Poisson Bridges: Application to Nonlinear Filtering Problems an Error Estimates
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">W. Dong, X. Luo and S. S.-T. Yau</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Asian Journal of Mathematics</span>
+                                    (Vol. 29, No. 3, pp. 253-282)
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="2">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2024</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Multivariate Feedback Particle Filter Rederived from the Splitting-Up Scheme
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">H. Miao and X. Luo*</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">East Asian Journal on Applied Mathematics</span>
+                                    (Vol. 14, No. 2, pp. 314-341)
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="3">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2023</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Convergence analysis of splitting-up algorithm of the Zakai's equation with correlated noises
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo, T. Pan and W. Dong</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Journal Of Systems Science & Complexity</span>
+                                    (Vol. 36, pp. 922-946)
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="4">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2022</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Recent progresses on two suboptimal methods for nonlinear filtering problems
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo and H. Miao</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">ICCM Notices</span>
+                                    (Vol. 10, No. 2, pp. 44-52)
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <!-- 索引5及以后的期刊论文默认隐藏，添加publication-enter�? -->
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="5">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2022</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        General convergence result for continuous-discrete feedback particle filter
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X.-Q. Chen, X. Luo, J. Shi and S. S.-T. Yau</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">International Journal of Control</span>
+                                    (Vol. 95, No. 11, pp. 2972-2986)
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="6">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2021</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Solving Nonlinear Filtering Problems in Real-time by Legendre Galerkin Spectral Method
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">W. Dong, X. Luo and S. S.-T. Yau</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">IEEE Transactions on Automatic Control</span>
+                                    (Vol. 66, No. 4, pp. 1559-1572)
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="7">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2020</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        On Classification of Toric Surface Codes of Dimension Seven
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">N. Hussian, X. Luo, S. S.-T. Yau, M. Zhang and H. Zuo</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Communications in Analysis and Geometry</span>
+                                    (Vol. 28, No. 2, pp. 263-319)
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="8">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2020</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Proper orthogonal decomposition method to nonlinear filtering problems in medium-high dimension
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Z. Wang, X. Luo, S. S.-T. Yau and Z. Zhang</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">IEEE Transactions on Automatic Control</span>
+                                    (Vol. 65, No. 4, pp. 1613-1624)
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2019</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        On the Newton polyhedrons with one inner lattice point
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo and F. Wang</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Methods and Applications of Analysis</span>
+                                    (Vol. 25, No. 4, pp. 1-12)
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2018</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Suboptimal linear Estimation for Continuous-discrete Bilinear Systems
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo, X.-Q. Chen and S. S.-T. Yau</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Systems & Control Letters</span>
+                                    (Vol. 119, pp. 92-100)
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2018</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        The suboptimal method via probabilists' Hermite polynomials to solve nonlinear filtering problems
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo and S. S.-T. Yau</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Automatica</span>
+                                    (Vol. 94, pp. 9-17)
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2018</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Error Analysis of the Wiener-Askey Polynomial Chaos with Hyperbolic Cross Approximation and Its Application to Differential Equations with Random Inputs
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Journal of Computational and Applied Mathematics</span>
+                                    (Vol. 335, pp. 242-269)
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2018</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Spectral viscosity method with generalized Hermite functions for nonlinear conservation laws
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Applied Numerical Mathematics</span>
+                                    (Vol. 123C, pp. 256-274)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2017</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Direct method for time-varying nonlinear filtering problems
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X.-Q. Chen, X. Luo and S. S.-T. Yau</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">IEEE Transactions on Aerospace and Electronic Systems</span>
+                                    (Vol. 53, No. 2, pp. 630-639)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2017</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Addendum: 2D homogeneous solutions to the Euler equation
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo and R. Shvydkoy</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Communications in Partial Differential Equations</span>
+                                    (Vol. 42, No. 3, pp. 491-493)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2016</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Novel Suboptimal Filter via Higher Order Central Moments
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo, Y. Jiao, W.-L. Chiou and S. S.-T. Yau</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">IEEE Transactions on Aerospace and Electronic Systems</span>
+                                    (Vol. 52, No. 4, pp. 2030-2038)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2015</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        On the Quenching Behavior of the MEMS with Fringing Field
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo and S. S.-T. Yau</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">The Quarterly of Applied Mathematics</span>
+                                    (Vol. 73, pp. 629-659)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2015</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        A Novel Suboptimal Method for Solving Polynomial Filtering Problems
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo, Y. Jiao, W.-L. Chiou and S. S.-T. Yau</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Automatica</span>
+                                    (Vol. 62, pp. 26-31)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2015</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        2D Homogeneous Solutions to the Euler Equation
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo and R. Shvydkoy</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Communications in Partial Differential Equations</span>
+                                    (Vol. 40, pp. 1666-1687)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2015</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Time-dependent Hermite-Galerkin spectral method and its applications
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo, S.-T. Yau and S. S.-T. Yau</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Applied Mathematics and Computation</span>
+                                    (Vol. 264, pp. 378-391)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2015</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        On Classification of Toric Surface Codes of Low Dimension
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo, S. S.-T. Yau, M. Zhang and H. Zuo</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Finite Fields and Their Applications</span>
+                                    (Vol. 33, pp. 90-102)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2015</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        A Sharp Polynomial Estimate of Positive Integral Points in a 4-dimensional Tetrahedron and a Sharp Estimate of the Dickman-deBruijn Function
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo, S. S.-T. Yau and H. Zuo</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Mathematische Nachrichten</span>
+                                    (Vol. 288, No. 1, pp. 61-75)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2014</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        On Recent Advance of Nonlinear Filtering Theory: Emphases on Global Approaches
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Pure and Applied Mathematics Quarterly</span>
+                                    (Vol. 10, No. 4, pp. 685-721)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2014</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        On a Number-theoretic Conjecture on Positive Integral Points in a 5-dimensional Tetrahedron and a Sharp Estimate of the Dickman-de Bruijn Function
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">K.-P. Lin, X. Luo, S. S.-T. Yau and H. Zuo</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Journal Of The European Mathematical Society</span>
+                                    (Vol. 16, pp. 1937-1966)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2013</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Hermite Spectral Method with Hyperbolic Cross Approximations to High-dimensional Parabolic PDEs
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo and S. S.-T. Yau</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">SIAM Journal on Numerical Analysis</span>
+                                    (Vol. 51, No. 6 , pp. 3186-3212)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2013</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Hermite Spectral Method to 1D Forward Kolmogorov Equation and its Application to Nonlinear Filtering Problems
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo and S. S.-T. Yau</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">IEEE Transactions on Automatic Control</span>
+                                    (Vol. 58, No. 10, pp. 2495-2507)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2013</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Complete Real Time Solution of the General Nonlinear Filtering Problem without Memory
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo and S. S.-T. Yau</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">IEEE Transactions on Automatic Control</span>
+                                    (Vol. 58, No. 10, pp. 2563-2578)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2011</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Regularity of the Extremal Solution for Some Elliptic Problems with Singular Nonlinearity and Advection
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo, D. Ye and F. Zhou</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Journal of Differential Equations</span>
+                                    (Vol. 251, No. 8, pp. 2082-2099)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2010</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Uniqueness of Weak Extremal Solution to Biharmonic Equation with Logarithmically Convex Nonlinearities
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Journal of Partial Differential Equations</span>
+                                    (Vol. 23, No. 4, pp. 315-329)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2010</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Parameters of Two Special Toric Surface Codes
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo, P. Zhang and H. Zuo</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Chinese Annals of Mathematics, Series A</span>
+                                    (Vol. 31, No. 5, 2010, pp. 517-524)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2009</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Asymptotic Behavior of Oscillating Radial Solutions to Certain Nonlinear Equations, Part II
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo, C. Gui and F. Zhou</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Methods and Applications of Analysis</span>
+                                    (Vol. 16, No. 4, pp. 459-468)
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2025</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Bayesian Forecast Combination with Predictive Priors via Particle Filtering
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo, Y. Kang and X. Luo*</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">submitted to Journal of Econometrics</span>
+                                    
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2024</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        The Compact Gaussian Mixture Optimal Transport Ensemble Kalman Filter and Its Applications to Partially Linear Systems
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Y. Li and X. Luo*</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">submitted to Optimization and Engineering</span>
+                                    
+                                 </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Conference Publications -->
+                    <!-- 标记每条会议论文的索引，用于控制默认显示�?4�? -->
+                    <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="conference" data-index="1">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">2024</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        The Gaussian Mixture Optimal Transport Ensemble Kalman Filter and its application to predict the capacity fade of lithium-ion batteries
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Y. Li and X. Luo*</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">2024 10th International Conference on Control, Decision and Information Technologies (CoDIT)</span>
+                                    (pp. 171-176)
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="conference" data-index="2">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">2019</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Feedback Particle Filter with Correlated Noises
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo and H. Miao</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Proceeding of the 58th IEEE Conference on Decision and Control</span>
+                                    (pp. 1637-1643)
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="conference" data-index="3">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">2018</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Generalized Jacobi spectral method in solving nonlinear filtering problems
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo and F. Wang</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Proceedings of the 57th IEEE Conference on Decision and Control</span>
+                                    (pp. 7206-7212)
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="conference" data-index="4">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">2012</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        A Novel Algorithm to Solve the Robust DMZ Equation in Real Time
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">X. Luo and S. S.-T. Yau</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">Proceedings of the 51st IEEE Conference on Decision and Control</span>
+                                    (pp. 606-611)
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 索引5及以后的会议论文默认隐藏，添加publication-enter�? -->
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="conference" data-index="5">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">2025</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        A Decomposition Approach for the Gain Function in the Feedback Particle Filter
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">R. Wang, H. Miao and X. Luo*</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">IEEE CDC</span>
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="conference" data-index="6">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <div class="md:w-1/12 flex justify-center">
+                                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">2025</span>
+                            </div>
+                            <div class="md:w-10/12">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        The Interacting Multiple Model Feedback Particle Filter for the State-dependent Switching Diffusion Systems
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Y. Chen, R. Wang , D. Yang and X. Luo*</span>
+                                </p>
+                                <p class="text-gray-500 text-sm mb-3">
+                                    <i class="fa fa-file-text-o mr-1"></i>
+                                    <span class="font-medium">CoDiT25</span>
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors">
+                                        <i class="fa fa-file-pdf-o mr-1"></i>PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 bg-white section-fade">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Research Projects</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                    <p class="mt-4 text-gray-600">Funded research projects and collaborative initiatives</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Project 1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow transform hover:-translate-y-1 duration-300">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://picsum.photos/id/180/600/400" alt="Adaptive Numerical Methods for Complex Flows" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-semibold">The study on the feedback particle filter for the nonlinear filtering problems with jump observations</h3>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2023.1-2026.12, PI</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+	In this project, we develop the feedback particle filter (FPF) for the nonlinear filtering (NLF) with jump observation, and analyze its convergence and error. As well, the challenges like numerical solution of control gain in the high-dimensional NLF problems are addressed.                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Nonlinear filtering</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Jump observations</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Kushner-Stratonovich-Poisson equation</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <p class="text-gray-500 text-sm">
+                                    <i class="fa fa-fund mr-1"></i> National Natural Science Foundation of China, No. 12271019
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    </section>
+        
+        <!-- Services Section -->
+        <section id="services" class="py-16 bg-gray-50 section-fade">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Academic Services</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                    <p class="mt-4 text-gray-600">Professional contributions to academic community</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service Area 1 -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 flex items-center">
+                            <span class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                                <i class="fa fa-refresh text-primary"></i>
+                            </span>
+                            Reviewing
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 p-5 rounded-lg">
+                                <h4 class="font-medium mb-2">Journal Reviews</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>Automatica J. IFAC</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>IEEE Transaction on Automatic Control</span>
+                                    </li>
+                   <li class="flex items-start">
+                                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>SIAM Journal on Control and Optimization
+</span>
+                                    </li>
+
+
+                                    <li class="flex items-start">
+                                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>IEEE Transaction on Signal Processing</span>
+                                    </li>
+
+
+                                    <li class="flex items-start">
+                                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>Applied Numerical Mathematics</span>
+                                    </li>
+
+                                    <li class="flex items-start">
+                                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>Systems & Control Letters</span>
+                                    </li>
+
+                                    <li class="flex items-start">
+                                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>International Journal of Control</span>
+                                    </li>
+
+<h4 class="font-medium mb-2">Conference Reviews</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>
+IEEE Conference on Decision and Control (CDC)
+</span>
+                                    </li>
+
+                                    <li class="flex items-start">
+                                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>
+American Control Conference (ACC)
+</span>
+                                    </li>
+
+                                <li class="flex items-start">
+                                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>
+European Control Conference (ECC)
+</span>
+                                    </li>
+
+
+                                <li class="flex items-start">
+                                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>
+European Control Conference (ECC)
+</span>
+                                    </li>
+
+</ul>
+
+<h4 class="font-medium mb-2">Program Reviews</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>China Scholarship Council (CSC) National Studying Abroad Program</span>
+</span>
+                                            <span class="text-sm text-gray-500">2022- Present</span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Area 2 -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 flex items-center">
+                            <span class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                                <i class="fa fa-users text-primary"></i>
+                            </span>
+                            Professional Affiliations/Roles
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 p-5 rounded-lg">
+                                <h4 class="font-medium mb-2">Members
+</h4>
+                                <ul class="text-gray-600 space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="fa fa-calendar text-primary mt-1 mr-2"></i>
+                                        <div>
+                                            <span class="block">
+Council Member, Bayesian Statistics Branch, Chinese Association of Applied Statistics 
+</span>
+                                            <span class="text-sm text-gray-500">2025 - Present</span>
+                                        </div>
+                                    </li>
+<li class="flex items-start">
+                                        <i class="fa fa-calendar text-primary mt-1 mr-2"></i>
+                                        <div>
+                                            <span class="block">
+Council Member, Young Statisticians Association, National Association for Teaching and Research in Industrial Statistics 
+	</span>
+                                            <span class="text-sm text-gray-500">2024- 2028</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa fa-calendar text-primary mt-1 mr-2"></i>
+                                        <div>
+                                            <span class="block">
+Council Member, National Association for Teaching and Research in Industrial Statistics 
+</span>
+                                            <span class="text-sm text-gray-500">2023 - 2026</span>
+                                        </div>
+                                    </li>
+
+<li class="flex items-start">
+                                        <i class="fa fa-calendar text-primary mt-1 mr-2"></i>
+                                        <div>
+                                            <span class="block">
+Senior Member, Institute of Electrical and Electronics Engineers (IEEE)	</span>
+                                            <span class="text-sm text-gray-500">2015- Present</span>
+                                        </div>
+                                    </li>
+ </ul>
+</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Area 3 -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 flex items-center">
+                            <span class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                                <i class="fa fa-cogs text-primary"></i>
+                            </span>
+                            International Activities
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 p-5 rounded-lg">
+                                <h4 class="font-medium mb-2">Organizer</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>Organizer, Mini-Symposium on "Recent Studies in Nonlinear Filtering" at The 9th International Congress on Industrial and Applied Mathematics (ICIAM 2019), with co-organizer Stephen S.-T. Yau.  URL: http://www.iciam2019.cn/ </span>
+                                    </li>
+
+                                    <li class="flex items-start">
+                                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>Organizer, Mini-Symposium on "New methods and trend in the field of nonlinear filtering" at The 8th International Congress on Industrial and Applied Mathematics (ICIAM 2015), with co-organizer Stephen S.-T. Yau.  URL: http://www.iciam2015.cn/ </span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Teaching Section -->
+        <section id="teaching" class="py-16 bg-white section-fade">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Teaching</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                    <p class="mt-4 text-gray-600">Courses taught at Beihang University</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Course 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold">Probability Theory</h3>
+                                <p class="text-gray-600">Undergraduate Level (2rd Year)</p>
+                            </div>
+                            <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">Fall Semester</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                          Probability theory is a foundational branch of mathematics that studies the likelihood of random events occurring, using concepts like sample spaces, event sets, and probability axioms (e.g., non-negativity, additivity) to quantify uncertainty. It introduces core tools such as probability rules (addition, multiplication), conditional probability, and basic distributions (uniform, binomial, normal), forming the basis for understanding randomness in fields from statistics to everyday decision-making.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">3.5 Credits</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Course 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold">Mathematical English</h3>
+                                <p class="text-gray-600">Undergraduate Level</p>
+                            </div>
+                            <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">Fall Semester</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+	Mathematical English focuses on teaching English terminology, academic expressions, and literature reading skills in the field of mathematics, helping students communicate mathematical ideas and read international mathematical papers effectively.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">1 Credit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    <!-- Course 3-->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold">Bayesian statistics</h3>
+                                <p class="text-gray-600">Undergraduate Level (3rd Year)</p>
+                            </div>
+                            <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">Spring Semester</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+	Bayesian Statistics centers on Bayes' theorem, teaching students to quantify uncertainty by combining prior knowledge with observed data--shifting from the frequentist view of "fixed parameters" to treating parameters as random variables with probabilistic beliefs.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">3 Credits</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-gray-50 section-fade">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Contact Information</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Contact Info -->
+                    <div class="md:col-span-1">
+                        <div class="bg-white p-8 rounded-xl shadow-md h-full">
+                            <h3 class="text-xl font-semibold mb-6">Get in Touch</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fa fa-map-marker text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium mb-1">Office Location</h4>
+                                        <p class="text-gray-600">School of Mathematical Sciences<br>Beihang University (Shahe campus)<br>102206, China</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fa fa-envelope text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium mb-1">Email</h4>
+                                        <p class="text-gray-600">xluo@buaa.edu.cn</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="md:col-span-2">
+                        <div class="bg-white p-8 rounded-xl shadow-md">
+                            <h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
+                            
+                            <form>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                                    <div>
+                                        <label for="name" class="block text-gray-700 mb-2">Your Name</label>
+                                        <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="John Doe">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-gray-700 mb-2">Your Email</label>
+                                        <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="john@example.com">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                                    <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="Inquiry about research collaboration">
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label for="message" class="block text-gray-700 mb-2">Your Message</label>
+                                    <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="I am interested in your research on..."></textarea>
+                                </div>
+                                
+                                <button type="submit" class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg shadow-md hover:bg-primary/90 transition-all transform hover:-translate-y-1">
+                                    <i class="fa fa-paper-plane mr-2"></i> Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // Mobile menu toggle
+            document.getElementById('menu-toggle').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Section fade-in animation on scroll
+            document.addEventListener('DOMContentLoaded', function() {
+                const sections = document.querySelectorAll('.section-fade');
+                
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.1
+                };
+                
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('section-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                
+                sections.forEach(section => {
+                    observer.observe(section);
+                });
+
+                // Publication filtering - 控制每个类别默认显示�?4�?
+                const filters = document.querySelectorAll('.publication-filter');
+                const items = document.querySelectorAll('.publication-item');
+                const toggleBtn = document.getElementById('toggle-publications');
+                let showingMore = false;
+                const DEFAULT_VISIBLE = 4; // 默认显示�?4�?
+                
+                // 初始化：默认显示期刊类别，且仅显示前4�?
+                function initPublications() {
+                    items.forEach(item => {
+                        const type = item.getAttribute('data-type');
+                        const index = parseInt(item.getAttribute('data-index'));
+                        
+                        // 仅显示期刊类别，且索引≤4的条�?
+                        if (type === 'journal' && index <= DEFAULT_VISIBLE) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                }
+                
+                // 初始化执�?
+                initPublications();
+                
+                // 筛�?�按钮事�? - 切换类别时仅显示该类别前4�?
+                filters.forEach(filter => {
+                    filter.addEventListener('click', function() {
+                        // 更新筛�?�按钮样�?
+                        filters.forEach(btn => {
+                            btn.classList.remove('bg-primary', 'text-white');
+                            btn.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                        });
+                        
+                        this.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                        this.classList.add('bg-primary', 'text-white');
+                        
+                        const filterType = this.getAttribute('data-filter');
+                        
+                        // 显示选中类型的前4条，隐藏其他
+                        items.forEach(item => {
+                            const itemType = item.getAttribute('data-type');
+                            const itemIndex = parseInt(item.getAttribute('data-index'));
+                            
+                            if (itemType === filterType && itemIndex <= DEFAULT_VISIBLE) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                        
+                        // 重置显示更多状�??
+                        showingMore = false;
+                        toggleBtn.textContent = 'Show More Publications';
+                        // 移除�?有展�?状�??
+                        document.querySelectorAll('.publication-enter').forEach(pub => {
+                            pub.classList.remove('active');
+                        });
+                    });
+                });
+                
+                // 显示/隐藏更多出版�? - 显示当前类别�?有条�?
+                toggleBtn.addEventListener('click', function() {
+                    showingMore = !showingMore;
+                    const activeFilter = document.querySelector('.publication-filter.bg-primary');
+                    const currentType = activeFilter ? activeFilter.getAttribute('data-filter') : 'journal';
+                    
+                    if (showingMore) {
+                        // 显示当前类别�?有条�?
+                        items.forEach(item => {
+                            if (item.getAttribute('data-type') === currentType) {
+                                item.style.display = 'block';
+                                // 为隐藏的条目添加展开动画
+                                if (item.classList.contains('publication-enter')) {
+                                    item.classList.add('active');
+                                }
+                            }
+                        });
+                        toggleBtn.textContent = 'Show Less Publications';
+                    } else {
+                        // 仅显示当前类别前4�?
+                        items.forEach(item => {
+                            const itemType = item.getAttribute('data-type');
+                            const itemIndex = parseInt(item.getAttribute('data-index'));
+                            
+                            if (itemType === currentType && itemIndex <= DEFAULT_VISIBLE) {
+                                item.style.display = 'block';
+                            } else if (itemType === currentType) {
+                                // 隐藏当前类别索引>4的条�?
+                                item.classList.remove('active');
+                                item.style.display = 'none';
+                            } else {
+                                // 隐藏其他类别�?有条�?
+                                item.style.display = 'none';
+                            }
+                        });
+                        toggleBtn.textContent = 'Show More Publications';
+                    }
+                });
+            });
+        </script>
+    </main>
+</body>
+</html>
