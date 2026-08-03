@@ -1849,7 +1849,7 @@ URL: http://www.iciam2015.cn/ </span>
                                 <button type="submit" class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg shadow-md hover:bg-primary/90 transition-all transform hover:-translate-y-1">
                                     <i class="fa fa-paper-plane mr-2"></i> Send Message
                                 </button>
-                                <p class="mt-3 text-sm text-gray-500">Opens a pre-filled message in Gmail for you to review and send.</p>
+                                <p class="mt-3 text-sm text-gray-500">Opens Gmail, Outlook/Hotmail/Live, or Yahoo based on your email address; other providers use your default mail app.</p>
                             </form>
                         </div>
                     </div>
@@ -1864,7 +1864,7 @@ URL: http://www.iciam2015.cn/ </span>
                 mobileMenu.classList.toggle('hidden');
             });
 
-            // Open a browser-based Gmail draft with the completed form.
+            // Open the matching webmail provider when its compose URL is known.
             document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
 
@@ -1873,16 +1873,38 @@ URL: http://www.iciam2015.cn/ </span>
                 const subject = document.getElementById('subject').value.trim();
                 const message = document.getElementById('message').value.trim();
                 const body = `Name: ${name || 'Not provided'}\nEmail: ${email}\n\nMessage:\n${message}`;
-                const gmailUrl = new URL('https://mail.google.com/mail/');
-                gmailUrl.search = new URLSearchParams({
-                    view: 'cm',
-                    fs: '1',
-                    to: 'xluo@buaa.edu.cn',
-                    su: subject,
-                    body: body
-                }).toString();
+                const domain = email.split('@').pop().toLowerCase();
+                const recipient = 'xluo@buaa.edu.cn';
+                let composeUrl;
 
-                window.location.href = gmailUrl.toString();
+                if (domain === 'gmail.com' || domain === 'googlemail.com') {
+                    composeUrl = new URL('https://mail.google.com/mail/');
+                    composeUrl.search = new URLSearchParams({
+                        view: 'cm',
+                        fs: '1',
+                        to: recipient,
+                        su: subject,
+                        body: body
+                    }).toString();
+                } else if (['outlook.com', 'hotmail.com', 'live.com', 'msn.com'].includes(domain)) {
+                    composeUrl = new URL('https://outlook.live.com/mail/0/deeplink/compose');
+                    composeUrl.search = new URLSearchParams({
+                        to: recipient,
+                        subject: subject,
+                        body: body
+                    }).toString();
+                } else if (domain === 'yahoo.com' || domain.startsWith('yahoo.')) {
+                    composeUrl = new URL('https://compose.mail.yahoo.com/');
+                    composeUrl.search = new URLSearchParams({
+                        to: recipient,
+                        subject: subject,
+                        body: body
+                    }).toString();
+                } else {
+                    composeUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                }
+
+                window.location.href = composeUrl.toString();
             });
 
             // Section fade-in animation on scroll
