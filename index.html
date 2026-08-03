@@ -1849,6 +1849,7 @@ URL: http://www.iciam2015.cn/ </span>
                                 <button type="submit" class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg shadow-md hover:bg-primary/90 transition-all transform hover:-translate-y-1">
                                     <i class="fa fa-paper-plane mr-2"></i> Send Message
                                 </button>
+                                <p class="mt-3 text-sm text-gray-500">Opens a pre-filled message in Gmail for you to review and send.</p>
                             </form>
                         </div>
                     </div>
@@ -1863,7 +1864,7 @@ URL: http://www.iciam2015.cn/ </span>
                 mobileMenu.classList.toggle('hidden');
             });
 
-            // Open the visitor's email client with the completed form.
+            // Open a browser-based Gmail draft with the completed form.
             document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
 
@@ -1872,9 +1873,16 @@ URL: http://www.iciam2015.cn/ </span>
                 const subject = document.getElementById('subject').value.trim();
                 const message = document.getElementById('message').value.trim();
                 const body = `Name: ${name || 'Not provided'}\nEmail: ${email}\n\nMessage:\n${message}`;
-                const mailtoUrl = `mailto:xluo@buaa.edu.cn?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                const gmailUrl = new URL('https://mail.google.com/mail/');
+                gmailUrl.search = new URLSearchParams({
+                    view: 'cm',
+                    fs: '1',
+                    to: 'xluo@buaa.edu.cn',
+                    su: subject,
+                    body: body
+                }).toString();
 
-                window.location.href = mailtoUrl;
+                window.location.href = gmailUrl.toString();
             });
 
             // Section fade-in animation on scroll
