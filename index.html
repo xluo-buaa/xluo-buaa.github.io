@@ -292,7 +292,7 @@
                 <div class="space-y-6" id="publication-list">
                     <!-- Journal Publications -->
                     <!-- Ã¦Â ÂÃ¨Â®Â°Ã¦Â¯ÂÃ¦ÂÂ¡Ã¦ÂÂÃ¥ÂÂÃ¨Â®ÂºÃ¦ÂÂÃ§ÂÂÃ§Â´Â¢Ã¥Â¼ÂÃ¯Â¼ÂÃ§ÂÂ¨Ã¤ÂºÂÃ¦ÂÂ§Ã¥ÂÂ¶Ã©Â»ÂÃ¨Â®Â¤Ã¦ÂÂ¾Ã§Â¤ÂºÃ¥Â?4Ã¦Â? -->
-                    <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="1">
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="5">
                         <div class="flex flex-col md:flex-row md:items-center gap-4">
                             <div class="md:w-1/12 flex justify-center">
                                 <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2025</span>
@@ -315,7 +315,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="2">
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="6">
                         <div class="flex flex-col md:flex-row md:items-center gap-4">
                             <div class="md:w-1/12 flex justify-center">
                                 <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2024</span>
@@ -338,7 +338,7 @@
                         </div>
                     </div>
                     
-                    <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="3">
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="7">
                         <div class="flex flex-col md:flex-row md:items-center gap-4">
                             <div class="md:w-1/12 flex justify-center">
                                 <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2023</span>
@@ -361,7 +361,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="4">
+                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="8">
                         <div class="flex flex-col md:flex-row md:items-center gap-4">
                             <div class="md:w-1/12 flex justify-center">
                                 <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2022</span>
@@ -1009,7 +1009,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                    <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="1" data-priority="2026">
                         <div class="flex flex-col md:flex-row md:items-center gap-4">
                             <div class="md:w-1/12 flex justify-center">
                                 <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2026</span>
@@ -1032,7 +1032,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+                    <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="2" data-priority="2026">
                         <div class="flex flex-col md:flex-row md:items-center gap-4">
                             <div class="md:w-1/12 flex justify-center">
                                 <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2026</span>
@@ -1055,7 +1055,7 @@
                         </div>
                     </div>
 
-					     <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+					     <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="3" data-priority="2026">
                         <div class="flex flex-col md:flex-row md:items-center gap-4">
                             <div class="md:w-1/12 flex justify-center">
                                 <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2026</span>
@@ -1078,7 +1078,7 @@
                         </div>
                     </div>
 
-					 <div class="publication-item publication-enter bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal">
+					 <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="journal" data-index="4" data-priority="2026">
                         <div class="flex flex-col md:flex-row md:items-center gap-4">
                             <div class="md:w-1/12 flex justify-center">
                                 <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">2026</span>
@@ -1972,6 +1972,14 @@ URL: http://www.iciam2015.cn/ </span>
                 
                 sections.forEach(section => {
                     observer.observe(section);
+                });
+
+                // Move the four featured 2026 journal papers to the beginning.
+                const publicationList = document.getElementById('publication-list');
+                const firstJournal = publicationList.querySelector('[data-type="journal"]');
+                const featuredJournals = Array.from(publicationList.querySelectorAll('[data-priority="2026"]'));
+                featuredJournals.forEach(item => {
+                    publicationList.insertBefore(item, firstJournal);
                 });
 
                 // Publication filtering - ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½Ê? ?4 ?
