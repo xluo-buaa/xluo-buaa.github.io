@@ -1126,7 +1126,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="conference" data-index="3">
+                    <div class="publication-item bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow" data-type="conference" data-index="3" data-position="last-conference">
                         <div class="flex flex-col md:flex-row md:items-center gap-4">
                             <div class="md:w-1/12 flex justify-center">
                                 <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">2026</span>
@@ -1987,6 +1987,10 @@ URL: http://www.iciam2015.cn/ </span>
                 const firstConference = publicationList.querySelector('[data-type="conference"]');
                 const priorityConference = publicationList.querySelector('[data-priority="conference"]');
                 publicationList.insertBefore(priorityConference, firstConference);
+
+                // Keep the conference preprint as the final conference entry.
+                const lastConference = publicationList.querySelector('[data-position="last-conference"]');
+                publicationList.appendChild(lastConference);
 
                 // Publication filtering - ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½Ê? ?4 ?
                 const filters = document.querySelectorAll('.publication-filter');
